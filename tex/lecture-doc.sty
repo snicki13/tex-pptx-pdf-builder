@@ -1,0 +1,78 @@
+\ProvidesPackage{lecture-doc}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{extract}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{eucal}
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{epsfig}
+\usepackage{framed}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage[urlcolor=blue]{hyperref} 
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage[ngerman]{babel}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{tabularx}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+
+\pagestyle{fancy}
+\setlength\parindent{0cm}
+%\setlength\parskip{0.1in}
+\setlength\headheight{40pt}
+
+%%%%%%%%%%% HEADER / FOOTER %%%%%%%%%%%
+%\rhead{\workingDate}
+\lhead{\includegraphics[width=0.55\textwidth]{logo-thm-mni.png}}
+\chead{\textsc{}}
+\rhead{\textsc{\userName \\ \vspace{0.2cm} \veranstaltung}}
+\rfoot{\textsc{\thepage}}
+\cfoot{\textit{Zuletzt geändert: \today}}
+\lfoot{\textsc{\semesterShort}}
+
+%%%%%%%%% Enviornments %%%%%%%%%%%%
+\newenvironment{bullets}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+\newenvironment{numlist}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+\newenvironment{code}{
+\begin{quote}\begin{framed}
+}{\end{framed}\end{quote}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

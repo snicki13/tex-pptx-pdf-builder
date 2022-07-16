@@ -1,0 +1,27 @@
+stages:
+  - convert-pptx
+  - build-tex
+
+praktikum-tex:
+  image: blang/latex:ctanfull
+  stage: build-tex
+  script:
+    - cd tex/
+    - make pdf
+  artifacts:
+    untracked: true
+    expire_in: never
+  when: on_success
+
+vorlesung-pptx:
+  image: 
+    name: ghcr.io/snicki13/libreoffice-docker:main
+  stage: convert-pptx
+  script:
+    - cd pptx
+    - make pptx
+    - make staple
+  artifacts:
+    untracked: true
+    expire_in: never
+  when: on_success
