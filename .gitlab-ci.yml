@@ -1,27 +1,33 @@
 stages:
-  - convert-pptx
+  - build-resources
   - build-tex
+  - convert-pptx
 
-praktikum-tex:
-  image: blang/latex:ctanfull
+build-tex:
+  image:
+    name: texlive/texlive
   stage: build-tex
   script:
-    - cd tex/
+    - cd praktikum/
     - make pdf
   artifacts:
     untracked: true
-    expire_in: never
+    expire_in: 1 week
+    paths:
+      - "tex/*.pdf"
   when: on_success
 
-vorlesung-pptx:
-  image: 
+convert-pptx:
+  image:
     name: ghcr.io/snicki13/libreoffice-docker:main
   stage: convert-pptx
   script:
-    - cd pptx
+    - cd vorlesung
     - make pptx
     - make staple
   artifacts:
     untracked: true
-    expire_in: never
+    expire_in: 1 week
+    paths:
+      - "pptx/*.pdf"
   when: on_success
