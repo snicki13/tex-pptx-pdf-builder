@@ -1,4 +1,12 @@
-# DBS Vorlesung WS22/23
+# tex-pptx-pdf-builder
+
+Tools to build office and tex to pdf in GitLab CI pipeline.
+Github Action support is planned.
+
+All source tex files need to be listed in `tex/Makefile`
+All office files in `pptx/Makefile`. All file formats supported in libreoffice may be used.
+
+Build files are saved as job artifacts in Gitlab and may be downloaded here:
 
 ## Download Tex
 
